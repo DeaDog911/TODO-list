@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>943</width>
+    <height>530</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="3" column="0">
+       <widget class="QListWidget" name="task_list_widget"/>
+      </item>
+      <item row="10" column="0">
+       <widget class="QPushButton" name="delete_all_btn">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(136, 15, 17)</string>
+        </property>
+        <property name="text">
+         <string>Delete All</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="0">
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QPushButton" name="complete_btn">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(10, 161, 255)</string>
+          </property>
+          <property name="text">
+           <string>Mark as completed</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="uncomplete_btn">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(157, 157, 157)</string>
+          </property>
+          <property name="text">
+           <string>Mark as uncompleted</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="5" column="0">
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <item>
+         <widget class="QPushButton" name="new_task_btn">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(50, 181, 72)</string>
+          </property>
+          <property name="text">
+           <string>New</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="delete_btn">
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(202, 27, 11)</string>
+          </property>
+          <property name="text">
+           <string>Delete</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="9" column="0">
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QPushButton" name="edit_btn">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(187, 202, 18)</string>
+          </property>
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="save_btn">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(99, 148, 255)</string>
+          </property>
+          <property name="text">
+           <string>Save</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLineEdit" name="lineEdit">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="placeholderText">
+         <string>Task </string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
