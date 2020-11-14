@@ -2,3 +2,6 @@ database.db
 .idea
 __pychache__
 venv
+build
+dist
+__pycache__/

@@ -109,7 +109,7 @@ class Todo_App(QtWidgets.QMainWindow, window.Ui_MainWindow):
 
     def complete_task(self):
         current_item = self.task_list_widget.currentItem()
-        if current_item and current_item.text().split('|') == []:
+        if current_item and len(current_item.text().split('|')) == 1:
             date = str(datetime.datetime.now().date())
             task_text = current_item.text()
             self.database.mark_task_as_complete(task_text, date)
