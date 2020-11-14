@@ -6,12 +6,12 @@ from src.gui import window
 from PyQt5 import QtWidgets
 from PyQt5.QtGui import QColor
 
-from src.service.database import Todo_list_DB
+from src.service.database import ToDoListDB
 
 
 class Todo_App(QtWidgets.QMainWindow, window.Ui_MainWindow):
     COMPLETE_COLOR = '#778791'
-    BASE_COLOR = '#2E2E2E'
+    BASE_COLOR = '#FFFFFF'
 
     def __init__(self):
         super().__init__()
@@ -31,7 +31,7 @@ class Todo_App(QtWidgets.QMainWindow, window.Ui_MainWindow):
         self.conn = sqlite3.connect('database.db')
         self.cursor = self.conn.cursor()
 
-        self.database = Todo_list_DB()
+        self.database = ToDoListDB()
 
         self.show_tasks()
 
@@ -109,15 +109,15 @@ class Todo_App(QtWidgets.QMainWindow, window.Ui_MainWindow):
 
     def complete_task(self):
         current_item = self.task_list_widget.currentItem()
-        if current_item:
+        if current_item and current_item.text().split('|') == []:
             date = str(datetime.datetime.now().date())
             task_text = current_item.text()
+            self.database.mark_task_as_complete(task_text, date)
             new_text = f'{task_text} | {date}'
             current_item.setText(new_text)
             current_item.setBackground(QColor(self.COMPLETE_COLOR))
             self.sort_items()
 
-            self.database.mark_task_as_complete(task_text, date)
 
     def uncomplete_task(self):
         current_item = self.task_list_widget.currentItem()
@@ -128,7 +128,7 @@ class Todo_App(QtWidgets.QMainWindow, window.Ui_MainWindow):
             current_item.setBackground(QColor(self.BASE_COLOR))
             self.sort_items()
 
-            self.database.mark_task_as_uncomplete(task_text)
+            self.database.mark_task_as_uncompleted(task_text)
 
     def get_completed_tasks(self):
         completed_tasks = []
